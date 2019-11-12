@@ -12,3 +12,9 @@
 */
 
 Route::get('/', 'HomeController@index');
+
+Route::get('/login', 'Auth\LoginController@show')->name('login');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
