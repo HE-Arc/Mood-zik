@@ -12,13 +12,12 @@
 */
 
 Route::get('/', 'HomeController@index');
-<<<<<<< HEAD
+
 Route::get('/post', 'PostController@index')->name('post');
-=======
+
 
 Route::get('/login', 'Auth\LoginController@show')->name('login');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
->>>>>>> login
