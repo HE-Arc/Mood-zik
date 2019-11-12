@@ -13,13 +13,13 @@ class CreatePostTable extends Migration
      */
     public function up()
     {
-        Schema::create('post', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('text');
             $table->date('creation_date');
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('user');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
