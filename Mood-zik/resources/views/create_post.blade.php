@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<p>
+  Commentaire:
+  Commencer par implémenter la création d'un post en collant le code spotify d'un iframe
+</p>
 <form action="/products" method="post">
     {{ csrf_field() }}
 
