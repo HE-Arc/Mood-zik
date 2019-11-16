@@ -19,6 +19,8 @@ class PostController extends Controller
 
         $post->title = $request->title;
         $post->text = $request->text;
+        $post->user_id = auth()->id();
+        $post->created_at = date('Y-m-d H:i:s');
         $post->embed = $request->embed;
 
         $post->save();
