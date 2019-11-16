@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@show');
 
 Route::get('/post', 'PostController@index')->name('post');
 Route::post('/post', 'PostController@storePost')->name('post');
@@ -21,6 +21,6 @@ Route::get('/login', 'Auth\LoginController@show')->name('login');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@show')->name('home');
 
 Route::get('/profile', 'ProfileController@show')->name('profile');
