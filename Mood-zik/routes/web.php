@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('/post', 'PostController@index')->name('post');
+Route::post('/post', 'PostController@storePost')->name('post');
 
 
 Route::get('/login', 'Auth\LoginController@show')->name('login');
