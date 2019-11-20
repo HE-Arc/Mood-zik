@@ -12,7 +12,7 @@
                 <div class="card-header">Posts</div>
                 <?php
                     $max = $nb_posts;
-                    for($i = 0; $i < $nb_posts-1; $i++) {
+                    for($i = $nb_posts-1; $i >=0; $i--) {
                         echo '<div>';
                         echo '<h3>' . $username[$i]->name . '</h4>';
                         echo '<div>';
