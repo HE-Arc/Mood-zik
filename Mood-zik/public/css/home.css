@@ -35,11 +35,15 @@
   margin-bottom: 5px;
 }
 
+.page .post .post_content {
+    
+}
+
 .page .post iframe {
   width: 300px;
   height: 80px;
 }
 
-.page .conteneur_v {
+.page .post .conteneur_v {
   display: flex;
 }
