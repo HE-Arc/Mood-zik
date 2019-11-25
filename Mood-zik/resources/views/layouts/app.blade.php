@@ -22,6 +22,14 @@
     @yield('head')
 </head>
 <body>
+    <div class="main">
+      @include('partials/nav')
+    </div>
+    <div class="page">
+      @yield('content')
+    </div>
+
+    <!--
     <div id="app">
         @include('partials/nav')
 
@@ -29,5 +37,6 @@
             @yield('content')
         </main>
     </div>
+  -->
 </body>
 </html>
