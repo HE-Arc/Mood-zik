@@ -7,7 +7,8 @@
     </div>
     <div class="card">
         <p>
-          {{ Auth::user()->email }}
+          {{ Auth::user()->email }}<br />
+          <a href="{{ __('Logout') }}">Déconexion</a>
         </p>
     </div>
 

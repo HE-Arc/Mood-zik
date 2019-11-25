@@ -5,37 +5,31 @@
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Posts</div>
-                <?php
-                    $max = $nb_posts;
-                    for($i = $nb_posts-1; $i >=0; $i--) {
-                        echo '<div>';
-                        echo '<h3>' . $username[$i]->name . '</h4>';
-                        echo '<div>';
-                        echo '<h3>' . $posts[$i]->title . '</h3>';
-                        echo '<p>' . $posts[$i]->text . '</p>';
-                        echo $posts[$i]->embed;
-                        echo '</div>';
-                        echo '</div>';
-                    }
+<section id="home">
+    <div class="card-header">Posts</div>
+    <?php
+        $max = $nb_posts;
+        for($i = $nb_posts-1; $i >=0; $i--) {
+            echo '<div class="conteneur_v">';
+            echo '<h3>' . $username[$i]->name . '</h4>';
+            echo '<div class="post_content">';
+            echo '<h3>' . $posts[$i]->title . '</h3>';
+            echo '<p>' . $posts[$i]->text . '</p>';
+            echo $posts[$i]->embed;
+            echo '</div>';
+            echo '</div>';
+        }
 
-                 ?>
+     ?>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
+    <div class="card-body">
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
             </div>
-        </div>
+        @endif
+
+        You are logged in!
     </div>
-</div>
+</section>
 @endsection
