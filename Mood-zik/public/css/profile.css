@@ -1,0 +1,49 @@
+
+.page {
+  background-color: smokegray;
+  display: flex;
+  justify-content: center;
+}
+
+.page #home {
+  background-color: lightgray;
+  box-shadow: 0px 0px 5px 2px lightgray;
+  width: 70%;
+  padding: 10px;
+}
+
+.page #home .card-header {
+  color: black;
+  font-weight: bold;
+  font-size: 28px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.page .post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+  box-shadow: 0px 0px 5px 2px lightgray;
+  background-color: whitesmoke;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+
+.page .post .post_content {
+
+}
+
+.page .post iframe {
+  width: 300px;
+  height: 80px;
+}
+
+.page .post .conteneur_v {
+  display: flex;
+}
