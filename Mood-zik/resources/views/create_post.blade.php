@@ -17,8 +17,8 @@
                 <div></div> <textarea class="input" id="title" name="title" cols="50" rows="1">Titre</textarea> </div>
                 <div> <label for="title">Choisissez votre morceau</label>
                 <div></div> <textarea class="input" id="embed" name="embed" cols="50" rows="1">Morceau</textarea> </div>
-                <div> <label for="title">Entrez votre texte</label>
-                <div></div> <textarea class="input" id="text" name="text" cols="50" rows="10" maxlength="200">Texte</textarea> </div>
+                <div> <label for="title">Entrez votre texte (max 200 caractères)</label>
+                <div></div> <textarea class="input" id="text" name="text" cols="50" rows="5" maxlength="200">Texte</textarea> </div>
 
                 @if ($errors->any())
                     <div class="alert alert-danger">
