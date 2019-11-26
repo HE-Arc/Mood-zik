@@ -37,7 +37,7 @@ class MusicsTableSeeder extends Seeder
         ]);
 
         DB::table('musics')->insert([
-          'title' => 'Circle',
+          'title' => 'Circles',
           'artist' => 'Post Malone',
           'embed' => '<iframe src="https://open.spotify.com/embed/track/21jGcNKet2qwijlDFuPiPb" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
         ]);

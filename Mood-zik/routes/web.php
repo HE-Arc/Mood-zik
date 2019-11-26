@@ -24,3 +24,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@show')->name('home');
 
 Route::get('/profile', 'ProfileController@show')->name('profile');
+
+Route::get('/post/action', 'PostController@action')->name('live_search.action');

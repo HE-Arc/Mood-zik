@@ -2,14 +2,14 @@
 
 @section('head')
   <link href="{{ asset('css/home.css') }}" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="{{ asset('css/post.css') }}" rel="stylesheet">
+  <script src="{{ asset('js/post.js') }}" ></script>
+
 @endsection
 
 @section('content')
 
-<form action="{{ route('post') }}" method="post">
+<form action="{{ route('post') }}" method="post" autocomplete="off">
     {{ csrf_field() }}
 
     <div class=post>
@@ -18,23 +18,13 @@
                 <div><label for="title"><h3>Nouveau post</h3></label></div>
                 <div><label for="title">Entrez votre titre</label>
                 <div></div> <textarea class="input" id="title" name="title" cols="50" rows="1">Titre</textarea> </div>
-                <div> <label for="title">Choisissez votre morceau</label>
-                <div></div> <textarea class="input" id="search" name="search" placeholder="Search Music" cols="50" rows="1"></textarea></div>
-                <div class="table-responsive">
-                  <h3 align="center">Musiques : <span id="total_records"></span></h3>
-                  <table class="table table-striped table-bordered">
-                    <thead>
-                      <tr>
-                        <th>Titre</th>
-                        <th>Artiste</th>
-                      </tr>
-                    </thead>
-                    <tbody>
+                <div class="autocomplete" style="300px;"> <label for="title">Choisissez votre morceau</label>
 
-                    </tbody>
-                  </table>
+
+                <input id="myInput" type="text" name="myCounty" placeholder="Country" />
 
                 </div>
+
                 <div> <label for="title">Entrez votre texte (max 200 caractères)</label>
                 <div></div> <textarea class="input" id="text" name="text" cols="50" rows="5" maxlength="200">Texte</textarea> </div>
 
@@ -53,34 +43,18 @@
     </div>
     <div><label for="title"><p>Commentaire: Commencer par implémenter la création d'un post en collant le code spotify d'un iframe</p></label></div>
 </form>
+
+
 @endsection
 
 @section('script')
 <script>
-  $('document').ready(function(){
-
-      fetch_music_data();
-
-      function fetch_music_data(query = '')
-      {
-          $.ajax({
-              url:"{{ route('live_search.action') }}",
-              method: 'GET',
-              data: {query:query},
-              dataType: 'json',
-              success: function(data)
-              {
-                  $('tbody').html(data.table_data);
-                  $('#total_records').text(data.total_data);
-              }
-          })
-      }
-
-      $(document).on('keyup', '#search', function(){
-        var query = $(this).val();
-        fetch_music_data(query);
-      });
-  });
+    var tabMusics = [];
+    <?php foreach ($musics_array as $music) : ?>
+    tabMusics.push("<?php echo $music->title?>");
+    <?php endforeach; ?>
+    console.log(tabMusics);
+    autocomplete(document.getElementById("myInput"), tabMusics);
 </script>
 
 @endsection
