@@ -26,7 +26,7 @@ class PostRequest extends FormRequest
         return [
             'title' => 'required',
             'text' => 'required',
-            'embed' => 'required'
+            'music' => 'required'
         ];
     }
 }

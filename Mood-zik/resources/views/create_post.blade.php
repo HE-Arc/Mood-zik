@@ -21,7 +21,7 @@
                 <div class="autocomplete" style="300px;"> <label for="title">Choisissez votre morceau</label>
 
 
-                <input id="myInput" type="text" name="myCounty" placeholder="Country" />
+                <input id="music" type="text" name="music" placeholder="Music" />
 
                 </div>
 
@@ -54,7 +54,7 @@
     tabMusics.push("<?php echo $music->title?>");
     <?php endforeach; ?>
     console.log(tabMusics);
-    autocomplete(document.getElementById("myInput"), tabMusics);
+    autocomplete(document.getElementById("music"), tabMusics);
 </script>
 
 @endsection

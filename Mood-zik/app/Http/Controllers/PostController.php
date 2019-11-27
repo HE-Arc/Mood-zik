@@ -17,13 +17,16 @@ class PostController extends Controller
 
     public function storePost(PostRequest $request)
     {
+        $music = $request->music;
+        $music_id = DB::table('musics')->where('title', $music)->value('id');
+
         $post = new Post();
 
         $post->title = $request->title;
         $post->text = $request->text;
         $post->user_id = auth()->id();
         $post->created_at = date('Y-m-d H:i:s');
-        $post->embed = $request->embed;
+        $post->music_id = $music_id;
 
         $post->save();
 
