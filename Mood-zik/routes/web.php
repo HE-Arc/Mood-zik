@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@show');
+
+Route::get('/post', 'PostController@index')->name('post');
+Route::post('/post', 'PostController@storePost')->name('post');
+
+
+Route::get('/login', 'Auth\LoginController@show')->name('login');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@show')->name('home');
+
+Route::get('/profile', 'ProfileController@show')->name('profile');
+
+Route::get('/post/action', 'PostController@action')->name('live_search.action');
