@@ -7,7 +7,7 @@
 
 @section('content')
 
-<form action="" method="post" autocomplete="off">
+<form action="{{  route('playlists')  }}" method="post" autocomplete="off">
     {{ csrf_field()  }}
 
     <div>

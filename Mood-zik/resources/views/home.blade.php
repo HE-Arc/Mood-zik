@@ -11,7 +11,7 @@
     <?php
 
         for($i = $nb_posts-1; $i >=0; $i--) {
-            echo '<div class=post>';
+            echo '<div class="post">';
             echo '<div class="conteneur_v">';
             echo '<h3>' . $username[$i]->name . '</h3>';
             echo '<div class="post_content">';
