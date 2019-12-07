@@ -18,6 +18,7 @@
             echo '<h3>' . $posts[$i]->title . '</h3>';
             echo '<p>' . $posts[$i]->text . '</p>';
             echo $embed[$i]->embed;
+            echo '<br /><a href="">Ajouter ce post à une playlist</a>';
             echo '</div>';
             echo '</div>';
             echo '</div>';

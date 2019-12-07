@@ -22,8 +22,6 @@
               <label>{{ $playlist }}</label>
             </div>
           @endforeach
-
-
           <br />
           <a href="{{ route('playlists')  }}">Créer une nouvelle playlist</a>
         </div>
