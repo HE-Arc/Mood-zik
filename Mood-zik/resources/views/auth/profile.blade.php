@@ -15,6 +15,10 @@
               @csrf
           </form>
         </p>
+        <div class="playlists">
+          <h2>Vos playlists</h2>
+          <a href="{{ route('playlists')  }}">Créer une nouvelle playlist</a>
+        </div>
     </div>
 
 
