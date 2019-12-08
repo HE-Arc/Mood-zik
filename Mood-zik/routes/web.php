@@ -19,6 +19,8 @@ Route::post('/post', 'PostController@storePost')->name('post');
 Route::get('/playlists', 'PlaylistController@index')->name('playlists');
 Route::post('/playlists', 'PlaylistController@storePlaylist')->name('playlists');
 
+Route::get('add_to_playlist', 'PlaylistController@showAddToPlaylist')->name('add_to_playlist');
+
 Route::get('/login', 'Auth\LoginController@show')->name('login');
 
 Auth::routes();

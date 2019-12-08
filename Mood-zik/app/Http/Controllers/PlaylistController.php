@@ -13,6 +13,13 @@ class PlaylistController extends Controller
         return view('create_playlist');
     }
 
+    public function showAddToPlaylist()
+    {
+      $user_id = auth()->id();
+      $playlists = DB::select('select name from playlists where user_id=?', ['0' => $user_id]);
+      return view('add_to_playlist', ['playlists' => $playlists]);
+    }
+
     public function storePlaylist(Request $request)
     {
         $playlist = new Playlist();
