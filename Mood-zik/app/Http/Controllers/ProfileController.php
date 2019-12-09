@@ -11,7 +11,7 @@ class ProfileController extends Controller
     public function show()
     {
       $user_id = auth()->id();
-      $playlists = DB::select('select name from playlists where user_id=?', ['0' => $user_id]);
-      return view('auth.profile', ['playlists' => $playlists]);
+      $playlist = DB::select('select name from playlists where user_id=?', ['0' => $user_id]);
+      return view('auth.profile', ['playlist' => $playlist]);
     }
 }

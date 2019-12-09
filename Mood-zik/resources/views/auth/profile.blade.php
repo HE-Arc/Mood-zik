@@ -16,8 +16,8 @@
           </form>
         </p>
         <div class="playlists">
-          <h2>Vos playlists</h2>
-        
+          <h2>Votre playlists</h2>
+
           @foreach($playlists as $playlist)
             <div>
               <label>{{ $playlist->name }}</label>
