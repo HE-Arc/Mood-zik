@@ -9,7 +9,7 @@
 <section id="home">
     <div class="card-header">Posts</div>
     <?php
-        $max = $nb_posts;
+      //Posts
         for($i = $nb_posts-1; $i >=0; $i--) {
             echo '<div class=post>';
             echo '<div class="conteneur_v">';
@@ -17,10 +17,11 @@
             echo '<div class="post_content">';
             echo '<h3>' . $posts[$i]->title . '</h3>';
             echo '<p>' . $posts[$i]->text . '</p>';
-            echo $posts[$i]->embed;
+            echo $embed[$i]->embed;
             echo '</div>';
             echo '</div>';
             echo '</div>';
+
         }
 
      ?>

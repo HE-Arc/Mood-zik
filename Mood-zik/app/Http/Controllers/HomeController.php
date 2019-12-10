@@ -19,10 +19,12 @@ class HomeController extends Controller
 
     public function show()
     {
+      //Data
       $posts = DB::select("select * from posts");
+      $post_music_embed = DB::table('musics')->join('posts', 'musics.id', '=', 'posts.music_id')->select('musics.embed')->get();
       $nb_posts = DB::select('select count(*) as number from posts')[0]->number;
       $username = DB::select("select name from users join posts on users.id = posts.user_id");
-      return view('home', ['posts' => $posts, 'username' => $username, 'nb_posts' => $nb_posts]);
+      return view('home', ['posts' => $posts, 'username' => $username, 'nb_posts' => $nb_posts, 'embed' => $post_music_embed]);
     }
 
     /**
