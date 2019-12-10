@@ -17,14 +17,8 @@
         </p>
         <div class="playlists">
           <h2>Votre playlists</h2>
-          <h3><?php echo $playlist ?></h3>
-          <!--
-          @foreach($playlists as $playlist)
-            <div>
-              <label>{{ $playlist->name }}</label>
-            </div>
-          @endforeach
-        -->
+
+          
           <br />
           <a href="{{ route('playlists')  }}">Créer une nouvelle playlist</a>
         </div>

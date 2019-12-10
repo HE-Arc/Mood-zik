@@ -2,7 +2,7 @@
 
 
 @section('head')
-  <link href="{{ secure_asset('css/home.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
