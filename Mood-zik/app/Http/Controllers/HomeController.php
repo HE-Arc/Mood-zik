@@ -19,6 +19,7 @@ class HomeController extends Controller
 
     public function show()
     {
+      //Data
       $posts = DB::select("select * from posts");
       $post_music_embed = DB::table('musics')->join('posts', 'musics.id', '=', 'posts.music_id')->select('musics.embed')->get();
       $nb_posts = DB::select('select count(*) as number from posts')[0]->number;

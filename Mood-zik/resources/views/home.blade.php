@@ -9,7 +9,7 @@
 <section id="home">
     <div class="card-header">Posts</div>
     <?php
-
+      //Posts
         for($i = $nb_posts-1; $i >=0; $i--) {
             echo '<div class=post>';
             echo '<div class="conteneur_v">';
@@ -21,6 +21,7 @@
             echo '</div>';
             echo '</div>';
             echo '</div>';
+
         }
 
      ?>
