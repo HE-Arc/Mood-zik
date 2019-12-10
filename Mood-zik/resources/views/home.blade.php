@@ -11,13 +11,12 @@
     <?php
         for($i = $nb_posts-1; $i >=0; $i--) {
             echo '<div class=post>';
-            echo '<div class="conteneur_v">';
+            echo '<div class="container_vertical">';
             echo '<h2>' . $posts[$i]->title . '</h2>';
-            echo '<p>' . 'Posté par ' . $username[$i]->name . '</p>';
-            echo '<div class=conteneur_h>';
-                        echo '<p>' . $posts[$i]->text . '</p>';
+            echo '<p class="author">' . 'Posté par ' . $username[$i]->name . '</p>';
+            echo '<div class="container_horizental">';
+            echo '<p class="description">' . $posts[$i]->text . '</p>';
             echo $embed[$i]->embed;
-
             echo '</div>';
             echo '</div>';
             echo '</div>';

@@ -2,7 +2,6 @@
 {
 	margin: 0px;
 	padding: 0px;
-
 	font-family: arial;
 }
 
@@ -12,24 +11,43 @@ body
 	flex-direction: column;
 }
 
+.page
+{
+
+	display: flex;
+	background-color: whitesmoke;
+	box-shadow: 0px 0px 5px 2px lightgray;
+	width: 60%;
+	padding: 10px;
+}
+
+.page h1
+{
+	color:green;
+	font-weight: bold;
+	font-size: 40px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	width: 100%;
+	text-align: center;
+}
+
+.page h2
+{
+	color:green;
+}
+
 header
 {
 	display: flex;
-  	justify-content: space-between;
+  justify-content: space-between;
 	align-items: center;
 	height: 100px;
 	padding: 5px;
-
-	background-color: green;
+	background-color: red;
 	color: white;
 }
 
-header section
-{
-	display: flex;
-  	justify-content: center;
-  	align-items: center;
-}
 
 header .title
 {
@@ -42,217 +60,4 @@ header .title
 header .title:hover
 {
 	color: lightGray;
-}
-
-header .account a
-{
-	color: white;
-	font-size: 18px;
-}
-
-header .account a:hover
-{
-	color: lightGray;
-}
-
-header .account .username
-{
-	margin-right: 5px;
-}
-
-header .account .avatar
-{
-	display: block;
-}
-
-header .account .avatar img
-{
-	transition: .5s ease;
-	width: 90px;
-	border-radius: 50%;
-	height: 90px;
-}
-
-header .account .avatar .parameter
-{
-	max-width: 100%;
-	opacity: 0;
-	position: absolute;
-	transform: translate(0%, -100%);
-	-ms-transform: translate(0%, -100%);
-}
-
-header .account .avatar:hover .parameter
-{
-	opacity: 0.3;
-}
-
-header .account #user_menu
-{
-	display: none;
-	flex-direction: column;
-	background-color:darkgreen;
-	min-width: 50px;
-	position: absolute;
-	width: 200px;
-	top: 110px;
-	right: 0px;
-}
-
-header .account #user_menu a
-{
-	display: flex;
-	align-items: center;
-	color: white;
-	padding: 10px;
-	text-decoration: none;
-	height: 30px;
-}
-
-header .account #user_menu a:hover
-{
-	background-color: green;
-}
-
-.main
-{
-	display: flex;
-	min-height: 82.6vh;
-}
-
-.main div
-{
-	flex: 1;
-}
-
-.adminTools
-{
-	display: flex;
-	width: 100%;
-
-	margin: 0;
-	background-color: #404040;
-	height: 50px;
-  	top: 0;
-}
-
-.adminTools a
-{
-	display: flex;
-	flex: 1;
-	align-items: center;
-	min-height: 50px;
-
-	color: lightgray;
-	border-right: 2px solid green;
-	padding-right: 5px;
-	padding-left: 5px;
-	text-decoration: none;
-}
-
-.adminTools .first
-{
-	border-left: 2px solid green;
-}
-
-.adminTools a:hover
-{
-	color: white;
-	background-color: green;
-	border-color: green;
-	transition: .2s ease;
-}
-
-nav
-{
-	display: flex;
-	flex-direction: column;
-	position: static;
-	height: 100%;
-
-	padding-top: 20px;
-	width: 200px;
-	background-color: #404040;
-}
-
-nav a, .dropdown-btn
-{
-	position: static;
-	padding-left: 5px;
-	padding-bottom: 5px;
-	height: 45px;
-
-	font-size: 20px;
-	color: lightgray;
-	background: none;
-	text-align: left;
-	cursor: pointer;
-	outline: none;
-}
-
-nav a
-{
-	text-decoration: none;
-	display: flex;
-	align-items: center;
-
-}
-
-nav .dropdown-btn
-{
-	border: none;
-}
-
-nav a:hover, .dropdown-btn:hover
-{
-	color: white;
-	background-color: green;
-	transition: .2s ease;
-}
-
-nav .active
-{
-	background-color: green;
-  color: white;
-}
-
-nav .dropdown-container
-{
-	display: none;
-	background-color: #262626;
-	padding-left: 8px;
-}
-
-nav .dropdown-container a
-{
-	display: flex;
-	align-items: center;
-
-	font-size: 15px;
-	height: 30px;
-}
-
-nav .dropdown-container a:hover
-{
-	background-color: darkgreen;
-}
-
-nav .fa-caret-down
-{
-  float: right;
-  padding-right: 8px;
-}
-
-.nav_content
-{
-	display: flex;
-	flex: 1;
-}
-
-.page
-{
-	flex: 1;
-	padding: 20px;
-	right: 0px;
-	padding-top: 40px;
 }
