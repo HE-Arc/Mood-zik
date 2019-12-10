@@ -17,8 +17,8 @@
         </p>
         <div class="playlists">
           <h2>Votre playlists</h2>
-
           
+
           <br />
           <a href="{{ route('playlists')  }}">Créer une nouvelle playlist</a>
         </div>
