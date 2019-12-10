@@ -1,32 +1,35 @@
 
-.page {
-  background-color: smokegray;
-  display: flex;
-  justify-content: center;
+.page
+{
+	display: flex;
+	justify-content: center;
 }
 
-.page #home {
-  background-color: lightgray;
-  box-shadow: 0px 0px 5px 2px lightgray;
-  width: 70%;
-  padding: 10px;
+#home
+{
+	background-color: whitesmoke;
+	box-shadow: 0px 0px 5px 2px lightgray;
+	width: 60%;
+	padding: 10px;
 }
 
-.page #home .card-header {
-  color: black;
-  font-weight: bold;
-  font-size: 28px;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  width: 100%;
-  text-align: center;
+.page #home h1
+{
+	color: blue;
+	font-weight: bold;
+	font-size: 40px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	width: 100%;
+	text-align: center;
 }
+
 
 .page .post {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 90%;
+  max-width: 70%;
   box-shadow: 0px 0px 5px 2px lightgray;
   background-color: whitesmoke;
   padding: 10px;
@@ -35,9 +38,11 @@
   margin-bottom: 5px;
 }
 
-.page .post .post_content {
-    
+.page #home .post .conteneur_h
+{
+  display: inline-flex;
 }
+
 
 .page .post iframe {
   width: 300px;
@@ -46,4 +51,54 @@
 
 .page .post .conteneur_v {
   display: flex;
+}
+
+
+
+
+
+
+.page #home h2,h3
+{
+	color:green;
+	margin-bottom: 5px;
+}
+.page .img_news
+{
+	float:left;
+	width: 40%;
+	margin-right: 10px;
+}
+
+.page article
+{
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+  box-shadow: 0px 0px 5px 2px lightgray;
+  background-color: whitesmoke;
+  padding: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 5px;
+
+
+}
+
+.page .conteneur_v
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.page .conteneur_v
+{
+	display: flex;
+}
+
+.page p
+{
+	text-align: justify;
+	text-justify: inter-word;
 }

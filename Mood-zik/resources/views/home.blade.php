@@ -7,17 +7,17 @@
 
 @section('content')
 <section id="home">
-    <div class="card-header">Posts</div>
+    <h1> Derniers Posts </h1>
     <?php
-      //Posts
         for($i = $nb_posts-1; $i >=0; $i--) {
             echo '<div class=post>';
             echo '<div class="conteneur_v">';
-            echo '<h3>' . $username[$i]->name . '</h3>';
-            echo '<div class="post_content">';
-            echo '<h3>' . $posts[$i]->title . '</h3>';
-            echo '<p>' . $posts[$i]->text . '</p>';
+            echo '<h2>' . $posts[$i]->title . '</h2>';
+            echo '<p>' . 'Posté par ' . $username[$i]->name . '</p>';
+            echo '<div class=conteneur_h>';
+                        echo '<p>' . $posts[$i]->text . '</p>';
             echo $embed[$i]->embed;
+
             echo '</div>';
             echo '</div>';
             echo '</div>';
