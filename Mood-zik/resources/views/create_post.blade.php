@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('head')
-  <link href="{{ asset('css/home.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/post.css') }}" rel="stylesheet">
-  <script src="{{ asset('js/post.js') }}" ></script>
+  <link href="{{ secure_asset('css/home.css') }}" rel="stylesheet">
+  <link href="{{ secure_asset('css/post.css') }}" rel="stylesheet">
+  <script src="{{ secure_asset('js/post.js') }}" ></script>
 
 @endsection
 

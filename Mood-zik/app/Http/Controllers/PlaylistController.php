@@ -10,7 +10,7 @@ class PlaylistController extends Controller
 {
     public function index()
     {
-        return view('create_playlist');
+
     }
 
     public function showAddToPlaylist()
