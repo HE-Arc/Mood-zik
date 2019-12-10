@@ -17,7 +17,7 @@
             echo '<div class="post_content">';
             echo '<h3>' . $posts[$i]->title . '</h3>';
             echo '<p>' . $posts[$i]->text . '</p>';
-            /*echo $posts[$i]->embed;*/
+            echo $posts[$i]->embed;
             echo '</div>';
             echo '</div>';
             echo '</div>';
