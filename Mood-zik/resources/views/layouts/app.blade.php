@@ -21,12 +21,12 @@
     @yield('head')
 </head>
 <body>
+  <div>
   <header>
         @include('partials/header')
     </header>
-    <div class="main">
-      @include('partials/nav')
-    </div>
+  </div>
+
     <div class="page">
       @yield('content')
     </div>
