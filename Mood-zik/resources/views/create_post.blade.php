@@ -8,7 +8,8 @@
 @endsection
 
 @section('content')
-
+<section id="newPost">
+  <h1> Ajouter un nouveau post </h1>
 <form action="{{ route('post') }}" method="post" autocomplete="off">
     {{ csrf_field() }}
 
@@ -43,6 +44,7 @@
     </div>
     <div><label for="title"><p>Commentaire: Commencer par implémenter la création d'un post en collant le code spotify d'un iframe</p></label></div>
 </form>
+</section>
 
 
 @endsection

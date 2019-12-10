@@ -7,21 +7,21 @@
 
 @section('content')
 <section id="home">
-    <div class="card-header">Posts</div>
+    <h1> Derniers Posts </h1>
     <?php
-
         for($i = $nb_posts-1; $i >=0; $i--) {
-            echo '<div class="post">';
-            echo '<div class="conteneur_v">';
-            echo '<h3>' . $username[$i]->name . '</h3>';
-            echo '<div class="post_content">';
-            echo '<h3>' . $posts[$i]->title . '</h3>';
-            echo '<p>' . $posts[$i]->text . '</p>';
+            echo '<div class=post>';
+            echo '<div class="container_vertical">';
+            echo '<h2>' . $posts[$i]->title . '</h2>';
+            echo '<p class="author">' . 'Posté par ' . $username[$i]->name . '</p>';
+            echo '<div class="container_horizental">';
+            echo '<p class="description">' . $posts[$i]->text . '</p>';
             echo $embed[$i]->embed;
             echo '<br /><a href="{{ route(' . 'add_to_playlist' . ') }}">Ajouter ce post à ma playlist</a>';
             echo '</div>';
             echo '</div>';
             echo '</div>';
+
         }
 
      ?>
