@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
+@section('head')
+
+  <link href="{{ asset('css/form.css') }}" rel="stylesheet">
+
+
+@endsection
+
 @section('content')
+<section class="form_zone">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -70,4 +78,6 @@
         </div>
     </div>
 </div>
+</section>
+
 @endsection
