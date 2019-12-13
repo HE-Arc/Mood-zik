@@ -1,17 +1,18 @@
 @extends('layouts.app')
 
 @section('head')
-  <link href="{{ secure_asset('css/home.css') }}" rel="stylesheet">
-  <link href="{{ secure_asset('css/post.css') }}" rel="stylesheet">
-  <script src="{{ secure_asset('js/post.js') }}" ></script>
+  <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/post.css') }}" rel="stylesheet">
+  <script src="{{ asset('js/post.js') }}" ></script>
 
 @endsection
 
 @section('content')
 <section id="newPost">
   <h1> Ajouter un nouveau post </h1>
-<form action="{{ route('post') }}" method="post" autocomplete="off">
+  <form action="{{ route('post') }}" method="post" autocomplete="off">
     {{ csrf_field() }}
+
 
     <div class=post>
         <div class="conteneur_v">

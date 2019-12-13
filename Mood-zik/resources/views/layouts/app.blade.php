@@ -24,12 +24,13 @@
   <header>
         @include('partials/header')
     </header>
-    <div class="main">
-      @include('partials/nav')
-    </div>
+
     <div class="page">
+      <div class="content">
+
       @yield('content')
     </div>
+    </section>
 
     <!--
     <div id="app">
