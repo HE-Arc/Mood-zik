@@ -20,8 +20,9 @@
                 <div class="textarea" style="300px;"> <label for="title">Entrez votre titre :</label></div>
                 <textarea id="title" type="text" name="title" cols="50" rows="1" placeholder="Titre" style="overflow:auto;resize:none"></textarea>
 
-                <div class="textarea" style="300px;"> <label for="title">Choisissez votre musique :</label></div>
-                <textarea id="music" type="text" name="music" cols="50" rows="1" placeholder="Musique" style="overflow:auto;resize:none"></textarea>
+                <div class="autocomplete" style="300px;"> <label for="title">Choisissez votre musique</label>
+                <textarea id="music" type="text" name="music" placeholder="Music" cols="50" rows="1"></textarea>
+                </div>
 
                 <div class="textarea" style="300px;"> <label for="title">Entrez votre texte :</label></div>
                 <textarea id="text" type="text" name="text" cols="50" rows="5" placeholder="Texte" style="overflow:auto;resize:none"></textarea>
@@ -54,5 +55,4 @@
     console.log(tabMusics);
     autocomplete(document.getElementById("music"), tabMusics);
 </script>
-
 @endsection
