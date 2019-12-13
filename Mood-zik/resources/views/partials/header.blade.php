@@ -19,7 +19,13 @@
 	{
 	//	echo "<li> <a href=\"\">Mon profil </a></li>";
 		echo '<li><a href="' . route('profile') . '">Mon profil</a></li>';
-		echo "<li> <a href=\"\">Se déconnecter</a></li>";
+
+
+    echo '<li><a href="{{ __(\'Logout\') }}"
+      onclick="event.preventDefault();
+            document.getElementById(\'logout-form\').submit();">Déconexion</a></li>';
+
+  
 	}
 	else
 	{

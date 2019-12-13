@@ -21,15 +21,16 @@
     @yield('head')
 </head>
 <body>
-  <div>
   <header>
         @include('partials/header')
     </header>
-  </div>
 
     <div class="page">
+      <div class="content">
+
       @yield('content')
     </div>
+    </section>
 
     <!--
     <div id="app">

@@ -10,8 +10,9 @@
 @section('content')
 <section id="newPost">
   <h1> Ajouter un nouveau post </h1>
-<form action="{{ route('post') }}" method="post" autocomplete="off">
+  <form action="{{ route('post') }}" method="post" autocomplete="off">
     {{ csrf_field() }}
+
 
     <div class=post>
         <div class="conteneur_v">
