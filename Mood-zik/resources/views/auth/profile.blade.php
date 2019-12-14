@@ -17,7 +17,18 @@
         </p>
         <div class="playlists">
           <h2>Votre playlists</h2>
-          
+          <?php
+              for($playlist as $post)
+              {
+                echo '<div class=post>';
+                echo '<div class="container_vertical">';
+                echo '<h2>' . $post->title . '</h2>';
+                echo '<p class="author">' . 'Posté par ' . $username[$i]->name . '</p>';
+                echo '<div class="container_horizental">';
+                echo '<p class="description">' . $posts[$i]->text . '</p>';
+                echo $embed[$i]->embed;
+              }
+           ?>
 
           <br />
           <a href="{{ route('playlists')  }}">Créer une nouvelle playlist</a>
