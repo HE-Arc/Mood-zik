@@ -17,6 +17,8 @@ class PlaylistController extends Controller
 
     public function showPlaylist()
     {
+      $playlist = DB::table('posts')->join('post_playlist', 'post_playlist.playlist_id', '=', $user_id)->distinct('posts.*')->orderBy('post_playlist.id')->get();
+      $username = DB::table('users')->join('post_playlist', 'users.id', '=', 'post_playlist.playlist_id')->select('users.name')->orderBy('post_playlist.id')->get();
       return view('playlist');
     }
 
