@@ -23,10 +23,22 @@ class ProfileController extends Controller
       return view('auth.profile', ['playlist' => $playlist]);
     }
 
-    public function showUser(Request $requet, $id)
+    public function showUser(Request $request, $id)
     {
         $username = DB::table('users')->where('id', '=', $id)->value('name');
+        $posts = DB::table('posts')->where('user_id', '=', $id)->get();
 
-        return view('auth.user_profile', ['username' => $username]);
+        $embeds = array();
+
+        //degeulasse mais seul moyen trouvé
+        foreach($posts as $post)
+        {
+          $embed = DB::table('musics')
+              ->where('id', '=', $post->music_id)
+              ->value('embed');
+          array_push($embeds, $embed);
+        }
+
+        return view('auth.user_profile', ['username' => $username, 'posts' => $posts, 'embeds' => $embeds]);
     }
 }
