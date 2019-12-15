@@ -17,6 +17,7 @@
             echo '<div class="container_horizental">';
             echo '<p class="description">' . $posts[$i]->text . '</p>';
             echo $embed[$i]->embed;
+            echo '<br /><a href="{{ route(' . 'add_to_playlist' . ') }}">Ajouter ce post à ma playlist</a>';
             echo '</div>';
             echo '</div>';
             echo '</div>';
