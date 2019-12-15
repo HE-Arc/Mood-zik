@@ -33,10 +33,10 @@ class PostController extends Controller
         return redirect('/home');
     }
 
-    public function showMyPosts(Request $request, $id)
+    public function showMyPosts()
     {
-        $my_posts = DB::table('posts')->where('user_id', $id)->get();
-        $username = DB::table('users')->where('id', $id)->value('name');
+        $my_posts = DB::table('posts')->where('user_id', auth()->id())->get();
+        $username = DB::table('users')->where('id', auth()->id())->value('name');
         $embeds = array();
 
         //degeulasse mais seul moyen trouvé

@@ -15,6 +15,11 @@ class PlaylistController extends Controller
 
     }
 
+    public function showPlaylist()
+    {
+      return view('playlist');
+    }
+
     public function addToPlaylist(Request $request)
     {
         //$post_id = $request->post_id;

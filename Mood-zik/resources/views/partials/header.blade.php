@@ -4,8 +4,8 @@
 <nav>
       <li><a href="{{ route('post') }}">Ajouter un post</a></li>
       <li><a href="{{ route('post') }}">Tendances</a></li>
-      <li><a href="{{ route('posts', ['id' => auth()->id()]) }}">Mes posts</a></li>
-      <li><a href="{{ route('post') }}">Ma playlist</a></li>
+      <li><a href="{{ route('posts') }}">Mes posts</a></li>
+      <li><a href="{{ route('playlist') }}">Ma playlist</a></li>
 </nav>
 
 </div>

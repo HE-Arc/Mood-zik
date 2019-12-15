@@ -13,7 +13,9 @@
             echo '<div class=post>';
             echo '<div class="container_vertical">';
             echo '<h2>' . $posts[$i]->title . '</h2>';
-            echo '<p class="author">' . 'Posté par ' . $username[$i]->name . '</p>';
+            echo '<p class="author">';
+            echo 'Posté par <a href="'  . route('user', ['id' => $posts[$i]->user_id]) . '">' . $username[$i]->name . '</a>';
+            echo '</p>';
             echo '<div class="container_horizental">';
             echo '<p class="description">' . $posts[$i]->text . '</p>';
             echo $embed[$i]->embed;

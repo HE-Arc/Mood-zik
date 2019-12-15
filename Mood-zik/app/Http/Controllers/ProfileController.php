@@ -22,4 +22,11 @@ class ProfileController extends Controller
       */
       return view('auth.profile', ['playlist' => $playlist]);
     }
+
+    public function showUser(Request $requet, $id)
+    {
+        $username = DB::table('users')->where('id', '=', $id)->value('name');
+
+        return view('auth.user_profile', ['username' => $username]);
+    }
 }
