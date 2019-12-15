@@ -16,6 +16,8 @@ Route::get('/', 'HomeController@show');
 Route::get('/post', 'PostController@index')->name('post');
 Route::post('/post', 'PostController@storePost')->name('post');
 
+Route::get('/posts/{id}', 'PostController@showMyPosts')->name('posts');
+
 Route::get('/playlists', 'PlaylistController@storePlaylist')->name('playlists');
 //Route::post('/playlists', 'PlaylistController@storePlaylist')->name('playlists');
 
@@ -28,5 +30,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@show')->name('home');
 
 Route::get('/profile', 'ProfileController@show')->name('profile');
+
 
 Route::get('/post/action', 'PostController@action')->name('live_search.action');
