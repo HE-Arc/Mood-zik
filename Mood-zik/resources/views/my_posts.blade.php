@@ -7,7 +7,7 @@
 @section('content')
 <div class=container>
     <h1>Mes posts</h1>
-    <p>
+
       <?php
       //print_r($embeds);
 
@@ -34,7 +34,7 @@
       }
 
       ?>
-    </p>
+    
 
 
 </div>

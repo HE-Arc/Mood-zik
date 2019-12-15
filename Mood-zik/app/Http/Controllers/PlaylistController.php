@@ -17,9 +17,12 @@ class PlaylistController extends Controller
 
     public function showPlaylist()
     {
-      $playlist = DB::table('posts')->join('post_playlist', 'post_playlist.playlist_id', '=', $user_id)->distinct('posts.*')->orderBy('post_playlist.id')->get();
-      $username = DB::table('users')->join('post_playlist', 'users.id', '=', 'post_playlist.playlist_id')->select('users.name')->orderBy('post_playlist.id')->get();
-      return view('playlist');
+      $user_id = auth()->id();
+      $playlist = DB::select('SELECT distinct posts.* FROM posts, post_playlist WHERE post_playlist.playlist_id = 4');
+      //$playlist = DB::table('posts')->where('post_playlist.playlist_id', '=', $user_id)->distinct('posts.*')->get();
+      $usernames = DB::table('post_playlist')->where('playlist_id', '=', $user_id)->select('username');
+      $embeds = DB::table('musics')->join('post_playlist', 'post_playlist.music_id', '=', 'musics.id')->select('musics.embed')->orderBy('post_playlist.id')->get();
+      return view('playlist', ['playlist' => $playlist, 'usernames' => $usernames, 'embeds' => $embeds]);
     }
 
     public function addToPlaylist(Request $request)
@@ -30,6 +33,7 @@ class PlaylistController extends Controller
         $post_playlist->post_id = $request->post_id;
         $post_playlist->music_id = $request->post_music_id;
         $post_playlist->playlist_id = $playlist_id;
+        $post_playlist->username = $request->post_username;
         $post_playlist->save();
         return redirect('/home');
     }
