@@ -14,7 +14,9 @@
     echo '<div class=post>';
     echo '<div class="container_vertical">';
     echo '<h2>' . $playlist[$i]->title . '</h2>';
-    echo '<p class="author">' . 'Posté par ' . 'XXX' . ',le ' . $playlist[$i]->created_at .'</p>';
+    echo '<p class="author">';
+    echo 'Posté par <a href="' . route('user', ['id' => $playlist[$i]->user_id]) . '">' . $usernames[$i]->username . '</a>,le ' . $playlist[$i]->created_at;
+    echo '</p>';
     echo '<h3>' . 'Description de l\'auteur: ' . '</h3>';
     echo '<div class="container_horizental">';
     echo '<p class="description">' . $playlist[$i]->text . '</p>';

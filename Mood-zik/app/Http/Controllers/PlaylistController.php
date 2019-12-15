@@ -22,7 +22,7 @@ class PlaylistController extends Controller
       $playlist = DB::select('SELECT distinct posts.* FROM posts, post_playlist WHERE post_playlist.playlist_id = user_id');
       //$playlist = DB::table('posts')->where('post_playlist.playlist_id', '=', $user_id)->distinct('posts.*')->get();
 
-      $usernames = DB::select('SELECT username FROM post_playlist WHERE playlist_id=1');
+      $usernames = DB::table('post_playlist')->where('playlist_id', '=', $user_id)->select('username')->get();
       // username FROM `post_playlist` WHERE playlist_id = 1
 
 
