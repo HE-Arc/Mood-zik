@@ -1,19 +1,28 @@
 @extends('layouts.app')
 
 @section('head')
-
+  <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 @endsection
 
 @if(Auth::check())
 @section('content')
-<div class="container">
+<section id="home">
   <h1>Ma playlist</h1>
   <?php
   for($i=$nb_posts-1; $i >=0; $i--)
   {
-    //print_r($playlist[$i]);
-    print_r($usernames[$i]);
+    echo '<div class=post>';
+    echo '<div class="container_vertical">';
+    echo '<h2>' . $playlist[$i]->title . '</h2>';
+    echo '<p class="author">' . 'Posté par ' . 'XXX' . ',le ' . $playlist[$i]->created_at .'</p>';
+    echo '<h3>' . 'Description de l\'auteur: ' . '</h3>';
+    echo '<div class="container_horizental">';
+    echo '<p class="description">' . $playlist[$i]->text . '</p>';
     echo $embeds[$i]->embed;
+
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
   }
   //print_r($embeds);
 
@@ -48,7 +57,7 @@
   }
 */
   ?>
-</div>
+</section>
 @else
 
   <h2>Veuillez vous concentrer un minimum et vous connecter pour bénificer de toutes les fonctionnalités</h1>
