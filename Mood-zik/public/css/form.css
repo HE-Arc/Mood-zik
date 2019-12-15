@@ -41,7 +41,20 @@
 }
 .page .form_zone input[type=text]:focus, .page .form_zone input[type=password]:focus, .page .form_zone input[type=number]:focus, .page .form_zone select:focus
 {
-    border-color: green;
+    border-color: purple;
+    transition: 0.3s ease-in-out;
+}
+
+.page .form_zone input[type=text], .page .form_zone input[type=email], .page .form_zone input[type=number], .page .form_zone select
+{
+    width: 100%;
+    height: 25px;
+    border: 1px solid lightGray;
+    border-radius: 3px;
+}
+.page .form_zone input[type=text]:focus, .page .form_zone input[type=email]:focus, .page .form_zone input[type=number]:focus, .page .form_zone select:focus
+{
+    border-color: purple;
     transition: 0.3s ease-in-out;
 }
 
@@ -110,6 +123,7 @@
 
 .page .form_zone .input_zone textarea
 {
-    height: 200px;
+    height: 100px;
     margin-top: 5px;
+    resize: none;
 }
