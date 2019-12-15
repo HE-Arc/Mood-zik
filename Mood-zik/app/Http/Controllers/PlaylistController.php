@@ -17,12 +17,19 @@ class PlaylistController extends Controller
 
     public function showPlaylist()
     {
+      $nb_posts = Playlist::count();
       $user_id = auth()->id();
-      $playlist = DB::select('SELECT distinct posts.* FROM posts, post_playlist WHERE post_playlist.playlist_id = 4');
+      $playlist = DB::select('SELECT distinct posts.* FROM posts, post_playlist WHERE post_playlist.playlist_id = user_id');
       //$playlist = DB::table('posts')->where('post_playlist.playlist_id', '=', $user_id)->distinct('posts.*')->get();
-      $usernames = DB::table('post_playlist')->where('playlist_id', '=', $user_id)->select('username');
+
+      $usernames = DB::select('SELECT username FROM post_playlist WHERE playlist_id=1');
+      // username FROM `post_playlist` WHERE playlist_id = 1
+
+
+    //  $usernames = DB::table('post_playlist')->where('playlist_id', '=', $user_id)->select('username');
+
       $embeds = DB::table('musics')->join('post_playlist', 'post_playlist.music_id', '=', 'musics.id')->select('musics.embed')->orderBy('post_playlist.id')->get();
-      return view('playlist', ['playlist' => $playlist, 'usernames' => $usernames, 'embeds' => $embeds]);
+      return view('playlist', ['playlist' => $playlist, 'usernames' => $usernames, 'embeds' => $embeds, 'nb_posts' => $nb_posts]);
     }
 
     public function addToPlaylist(Request $request)

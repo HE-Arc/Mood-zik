@@ -8,14 +8,22 @@
 <div class="container">
   <h1>Ma playlist</h1>
   <?php
+  for($i=$nb_posts-1; $i >=0; $i--)
+  {
+    //print_r($playlist[$i]);
+    print_r($usernames[$i]);
+    echo $embeds[$i]->embed;
+  }
   //print_r($embeds);
 
   //$nb_posts = count($playlist);
   //print_r($playlist[0]->title);
   //print_r($playlist[0]->user_id);
   //print_r($usernames[0]->name);
-  //print_r($embeds[0]->embed);
-  print_r($playlist);
+//  print_r($embeds[0]->embed);
+//  print_r($embeds[1]->embed);
+//  print_r($playlist[0]->username);
+  //print_r($usernames[0])
   /*
   for($i = 0; $i < $nb_posts; $i++) {
       echo '<div class=post>';
