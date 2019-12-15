@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('head')
-
+  <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
-<div class=container>
+
+@if(Auth::check())
+<section id="home">
     <h1>Mes posts</h1>
 
       <?php
@@ -16,7 +18,7 @@
           echo '<div class=post>';
           echo '<div class="container_vertical">';
           echo '<h2>' . $my_posts[$i]->title . '</h2>';
-          echo '<p class="author">' . 'Posté par ' . $username . '</p>';
+          echo '<p class="author">' . 'Posté le ' . $my_posts[$i]->created_at . '</p>';
           echo '<div class="container_horizental">';
           echo '<p class="description">' . $my_posts[$i]->text . '</p>';
           echo $embeds[$i];
@@ -37,6 +39,11 @@
     
 
 
-</div>
+</section>
+@else
+
+  <h2>Veuillez vous concentrer un minimum et vous connecter pour bénéficier de toutes les fonctionnalités</h1>
+
+@endif
 
 @endsection
