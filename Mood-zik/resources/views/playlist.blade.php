@@ -8,7 +8,11 @@
 @section('content')
 <section id="home">
   <h1>Ma playlist</h1>
+  @if(count($playlist)!=0)
   <?php
+  $nb_posts = count($playlist);
+
+  /*
   for($i=$nb_posts-1; $i >=0; $i--)
   {
     echo '<div class=post>';
@@ -26,6 +30,7 @@
     echo '</div>';
     echo '</div>';
   }
+*/
   //print_r($embeds);
 
   //$nb_posts = count($playlist);
@@ -59,6 +64,11 @@
   }
 */
   ?>
+  @else
+  <p>
+    Pas de posts dans votre playlist
+  </p>
+  @endif
 </section>
 @else
 
