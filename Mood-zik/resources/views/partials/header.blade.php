@@ -25,7 +25,7 @@
       onclick="event.preventDefault();
             document.getElementById(\'logout-form\').submit();">Déconexion</a></li>';
 
-  
+
 	}
 	else
 	{
