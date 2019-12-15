@@ -3,14 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\PlaylistRequest;
 use App\Playlist;
+use App\PostPlaylist;
 
 class PlaylistController extends Controller
 {
     public function index()
     {
 
+    }
+
+    public function addToPlaylist(Request $request)
+    {
+        //$post_id = $request->post_id;
+        $playlist_id = DB::table('playlists')->where('user_id', auth()->id())->value('id');
+        $post_playlist = new PostPlaylist();
+        $post_playlist->post_id = $request->post_id;
+        $post_playlist->music_id = $request->post_music_id;
+        $post_playlist->playlist_id = $playlist_id;
+        $post_playlist->save();
+        return redirect('/home');
     }
 
     public function showAddToPlaylist()
