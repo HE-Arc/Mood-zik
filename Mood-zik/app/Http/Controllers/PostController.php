@@ -38,11 +38,10 @@ class PostController extends Controller
         $my_posts = DB::table('posts')->where('user_id', $id)->get();
         $username = DB::table('users')->where('id', $id)->value('name');
         $embeds = array();
-        
+
         //degeulasse mais seul moyen trouvé
         foreach($my_posts as $post)
         {
-          print_r($post->music_id);
           $embed = DB::table('musics')
               ->where('id', '=', $post->music_id)
               ->value('embed');
