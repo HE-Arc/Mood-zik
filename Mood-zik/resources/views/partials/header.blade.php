@@ -3,8 +3,9 @@
 
 <nav>
       <li><a href="{{ route('post') }}">Ajouter un post</a></li>
-      <li><a href="{{ route('post') }}">Tendences</a></li>
-      <li><a href="{{ route('post') }}">Playlist</a></li>
+      <li><a href="{{ route('post') }}">Tendances</a></li>
+      <li><a href="{{ route('post') }}">Mes posts</a></li>
+      <li><a href="{{ route('post') }}">Ma playlist</a></li>
 </nav>
 
 </div>
@@ -23,9 +24,9 @@
 
     echo '<li><a href="{{ __(\'Logout\') }}"
       onclick="event.preventDefault();
-            document.getElementById(\'logout-form\').submit();">Déconexion</a></li>';
+            document.getElementById(\'logout-form\').submit();">Déconnexion</a></li>';
 
-  
+
 	}
 	else
 	{
