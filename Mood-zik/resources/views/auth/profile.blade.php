@@ -18,16 +18,24 @@
         <div class="playlists">
           <h2>Votre playlists</h2>
           <?php
-              for($playlist as $post)
+              $nb_posts = count($playlist);
+              print_r($nb_posts);
+              print_r($playlist);
+              /*
+              for($i=0; $i < $nb_posts; $i++)
               {
                 echo '<div class=post>';
                 echo '<div class="container_vertical">';
-                echo '<h2>' . $post->title . '</h2>';
-                echo '<p class="author">' . 'Posté par ' . $username[$i]->name . '</p>';
+                echo '<h2>' . $playlist[$i]->title . '</h2>';
+                echo '<p class="author">' . 'Posté par ' . $usernames[$i]->name . '</p>';
                 echo '<div class="container_horizental">';
-                echo '<p class="description">' . $posts[$i]->text . '</p>';
-                echo $embed[$i]->embed;
+                echo '<p class="description">' . $playlist[$i]->text . '</p>';
+                echo $embeds[$i]->embed;
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
               }
+              */
            ?>
 
           <br />

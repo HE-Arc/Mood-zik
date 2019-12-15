@@ -21,6 +21,7 @@ class PlaylistController extends Controller
         $playlist_id = DB::table('playlists')->where('user_id', auth()->id())->value('id');
         $post_playlist = new PostPlaylist();
         $post_playlist->post_id = $request->post_id;
+        $post_playlist->music_id = $request->post_music_id;
         $post_playlist->playlist_id = $playlist_id;
         $post_playlist->save();
         return redirect('/home');

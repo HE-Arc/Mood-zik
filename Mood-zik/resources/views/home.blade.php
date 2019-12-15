@@ -20,6 +20,7 @@
             echo '<form action="' . route('add_to_playlist') . '" method="post">';
             echo csrf_field();
             echo '<input type="hidden" name="post_id" value="' . $posts[$i]->id . '" />';
+            echo '<input type="hidden" name="post_music_id" value="' . $posts[$i]->music_id . '" />';
             echo '<input type="submit" value="Add" />';
             echo '</form>';
             //echo '<br /><a href="{{ route(\'add_to_playlist\', [\'id\' => '. $posts[$i]->id . ']) }}">Ajouter ce post à ma playlist</a>';
