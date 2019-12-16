@@ -33,5 +33,23 @@ class PostController extends Controller
         return redirect('/home');
     }
 
+    public function showMyPosts()
+    {
+        $my_posts = DB::table('posts')->where('user_id', auth()->id())->get();
+        $username = DB::table('users')->where('id', auth()->id())->value('name');
+        $embeds = array();
+
+        //degeulasse mais seul moyen trouvé
+        foreach($my_posts as $post)
+        {
+          $embed = DB::table('musics')
+              ->where('id', '=', $post->music_id)
+              ->value('embed');
+          array_push($embeds, $embed);
+        }
+
+        return view('my_posts', ['my_posts' => $my_posts, 'username' => $username, 'embeds' => $embeds]);
+    }
+
 
 }

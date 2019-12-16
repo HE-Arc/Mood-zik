@@ -68,5 +68,13 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        // Utiliser plutôt un Observer : https://laravel.com/docs/6.x/eloquent#observers
+        /*
+        $playlist = Playlist::firstOrCreate(['name' => $data['name']], ['user_id' => auth()->id()]);
+        $user->playlists()->save($playlist);
+        */
+        //return $user;
     }
+
 }

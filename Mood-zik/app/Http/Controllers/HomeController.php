@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Post;
 
 class HomeController extends Controller
 {
@@ -14,15 +15,16 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        
     }
 
     public function show()
     {
-      $posts = DB::select("select * from posts");
-      $post_music_embed = DB::table('musics')->join('posts', 'musics.id', '=', 'posts.music_id')->select('musics.embed')->get();
-      $nb_posts = DB::select('select count(*) as number from posts')[0]->number;
-      $username = DB::select("select name from users join posts on users.id = posts.user_id");
+      $posts = Post::all();
+      $nb_posts = Post::count();
+      $username = DB::table('users')->join('posts', 'users.id', '=', 'posts.user_id')->select('users.name')->orderBy('posts.id')->get();
+      $post_music_embed = DB::table('musics')->join('posts', 'musics.id', '=', 'posts.music_id')->select('musics.embed')->orderBy('posts.id')->get();
+
       return view('home', ['posts' => $posts, 'username' => $username, 'nb_posts' => $nb_posts, 'embed' => $post_music_embed]);
     }
 
