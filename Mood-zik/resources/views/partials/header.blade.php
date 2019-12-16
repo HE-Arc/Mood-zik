@@ -12,31 +12,35 @@
 
 
 
-<div class="container_header_right">
 <?php
+
 	use Illuminate\Support\Facades\Auth;
+  ?>
 
-	if(Auth::check())
-	{
-	//	echo "<li> <a href=\"\">Mon profil </a></li>";
-		echo '<li><a href="' . route('profile') . '">Mon profil</a></li>';
+	@if(Auth::check())
 
+    <div class="container_header_right">
+		<li><a href="{{route('profile')}}">Mon profil</a></li>
 
-    echo '<li><a href="{{ __(\'Logout\') }}"
-      onclick="event.preventDefault();
-            document.getElementById(\'logout-form\').submit();">Déconnexion</a></li>';
-
-
-
-	}
-	else
-	{
-		echo '<li><a href="' . route('login') . '">Connexion</a></li>';
-		echo '<li><a href="' . route('register') . '">Inscription</a></li>';
-	}
-
-?>
+<li>
+    <a href="{{ __('Logout') }}"
+    onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();">Déconnexion</a></li>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
 </div>
+
+
+@else
+  <div class="container_header_right">
+		<li><a href="{{ route('login') }}">Connexion</a></li>
+		<li><a href="{{ route('register')}}">Inscription</a></li>
+</div>
+@endif
+
+
+
 
 </ul>
 </nav>

@@ -4,8 +4,9 @@
   <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 @endsection
 
-@if(Auth::check())
+
 @section('content')
+@if(Auth::check())
 <section id="home">
   <h1>Ma playlist</h1>
   <?php
