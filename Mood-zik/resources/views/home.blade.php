@@ -8,6 +8,12 @@
 @section('content')
   <section id="posts">
   <h1> Derniers Posts </h1>
+  @if($nb_posts == 0)
+
+    <div class=post>
+    <p>Il n'y pas encore de post !</p>
+  </div>
+  @endif
 
   @for ($i = $nb_posts-1; $i >= 0; $i--)
     <div class=post>
