@@ -1,0 +1,58 @@
+.page
+{
+    min-width: 500px;
+}
+
+.page #profil
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+	  background-color: whitesmoke;
+    padding: 20px;
+    box-shadow: 0px 0px 5px 2px lightgray;
+}
+
+.page #profil h1
+{
+    color: purple;
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+}
+
+.page #profil .title
+{
+  color: purple;
+  font-size: 18px;
+  display: inline;
+}
+.page #profil .container_vertical
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.page #profil .container_horizental
+{
+  display: inline-flex;
+  padding-top: 5px;
+  justify-content: flex-start;
+}
+
+.page #profil button[type=submit]
+{
+    margin-top: 20px;
+    background-color: purple;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    height: 30px;
+}
+
+.page #profil a{
+  text-decoration:none;
+  color:white;
+}
