@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 class ProfileController extends Controller
 {
     /**
-     *
+     * returns the profile
      *
      */
     public function show()
@@ -21,6 +21,10 @@ class ProfileController extends Controller
       return view('auth.profile', ['playlist' => $playlist]);
     }
 
+    /**
+     * returns the user_profile view that shows all the posts posted by an user
+     *
+     */
     public function showUser(Request $request, $id)
     {
         $username = DB::table('users')->where('id', '=', $id)->value('name');
@@ -28,7 +32,7 @@ class ProfileController extends Controller
 
         $embeds = array();
 
-        // pas du tout idéal mais seule solution fonctionnelle trouvée à temps
+        // not the best at all but only solution found in time
         foreach($posts as $post)
         {
           $embed = DB::table('musics')
