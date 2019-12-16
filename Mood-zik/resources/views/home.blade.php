@@ -8,7 +8,7 @@
 @section('content')
   <section id="posts">
   <h1> Derniers Posts </h1>
-
+  <?php $nb_posts = count($posts); ?>
   @for ($i = $nb_posts-1; $i >= 0; $i--)
     <div class=post>
     <div class="container_vertical">
