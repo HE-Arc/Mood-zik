@@ -13,10 +13,19 @@
       <div class=post>
         <div class="container_vertical">
           <h2>{{$posts[$i]->title}}</h2>
-          <p class="author">Posté par {{$username[$i]->name}}  </p>
+          <p class="author">Posté par
+            <a href="{{route('user', ['id' => $posts[$i]->user_id])}}"> {{$username[$i]->name}} </a>
+          </p>
           <div class="container_horizental">
             <p class="description"> {{$posts[$i]->text}} </p>
             <?php echo $embed[$i]->embed; ?>
+            <form action="{{route('add_to_playlist')}}" method="post">
+            <input type="hidden" name="post_id" value="{{$posts[$i]->id}}" />
+            {{csrf_field()}}
+            <input type="hidden" name="post_music_id" value="{{$posts[$i]->music_id}}" />
+            <input type="hidden" name="post_username" value="{{$username[$i]->name}}" />
+            <input type="submit" value="+" />
+            </form>
           </div>
         </div>
       </div>
