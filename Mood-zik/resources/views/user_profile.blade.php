@@ -6,7 +6,8 @@
 
 @section('content')
 <div class="container">
-  <h1><?php echo $username ?></h1>
+  <h1>Profil de {{$username}}</h1>
+  <h2> jafnlkdnagkpdnogjaogfjasdkofg </h2>
   <?php
   //print_r($embeds);
 

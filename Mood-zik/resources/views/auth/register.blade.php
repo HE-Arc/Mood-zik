@@ -9,7 +9,7 @@
 
 @section('content')
 
-<section class="form_zone">
+<section id="form_zone">
 <h1> Inscription </h1>
 <div class="container">
     <div class="row justify-content-center">
