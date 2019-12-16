@@ -35,7 +35,7 @@ class PlaylistController extends Controller
 
     //  $usernames = DB::table('post_playlist')->where('playlist_id', '=', $user_id)->select('username');
 
-      $embeds = DB::table('musics')->join('post_playlist', 'post_playlist.music_id', '=', 'musics.id')->select('musics.embed')->orderBy('post_playlist.id')->get();
+      $embeds = DB::table('musics')->join('post_playlist', 'post_playlist.music_id', '=', 'musics.id')->where('post_playlist.playlist_id', '=', $user_id)->select('musics.embed')->get();
       return view('playlist', ['playlist' => $playlist, 'usernames' => $usernames, 'embeds' => $embeds, 'nb_posts' => $nb_posts]);
     }
 
