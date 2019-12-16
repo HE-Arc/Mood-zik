@@ -38,7 +38,8 @@ class ProfileController extends Controller
               ->value('embed');
           array_push($embeds, $embed);
         }
+        $nb_posts = DB::table('posts')->where('user_id', auth()->id())->count();
 
-        return view('auth.user_profile', ['username' => $username, 'posts' => $posts, 'embeds' => $embeds]);
+        return view('auth.user_profile', ['username' => $username, 'posts' => $posts, 'embeds' => $embeds, 'nb_posts' => $nb_posts]);
     }
 }
