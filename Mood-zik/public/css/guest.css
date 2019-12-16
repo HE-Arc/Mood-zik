@@ -1,0 +1,25 @@
+.page
+{
+    min-width: 500px;
+}
+
+.page #guest
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 20px;
+
+}
+
+.page #guest p
+{
+  color:red;
+}
+
+.page #guest a{
+  decoration:none;
+  
+}
