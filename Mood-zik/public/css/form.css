@@ -33,7 +33,7 @@
 }
 
 
-.page #form_zone input[type=text], .page #form_zone input[type=password]/*.page #form_zone input[type=number], .page #form_zone select*/
+.page #form_zone input[type=text], .page #form_zone input[type=password], .page #form_zone input[type=email]/*.page #form_zone input[type=number], .page #form_zone select*/
 {
     width: 100%;
     height: 25px;

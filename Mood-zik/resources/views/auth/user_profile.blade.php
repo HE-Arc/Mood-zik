@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
 @section('head')
+  <link href="{{ asset('css/profil.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/posts.css') }}" rel="stylesheet">
 
 @endsection
 
 @section('content')
+<section id="posts">
 <div class="container">
-  <h1><?php echo $username ?></h1>
+  <h1>Profil de {{$username}}</h1>
   <?php
   //print_r($embeds);
 
@@ -35,6 +39,6 @@
   ?>
 
 </div>
-
+</section>
 
 @endsection
