@@ -17,9 +17,16 @@ class PlaylistController extends Controller
 
     public function showPlaylist()
     {
-      $nb_posts = Playlist::count();
+    //  $nb_posts = Playlist::count();
       $user_id = auth()->id();
-      $playlist = DB::select('SELECT distinct posts.* FROM posts, post_playlist WHERE post_playlist.playlist_id = user_id');
+      $nb_posts = DB::table('post_playlist')->where('post_playlist.playlist_id', '=', $user_id)->count();
+
+    //  $playlist = DB::select('SELECT distinct posts.* FROM posts, post_playlist WHERE post_playlist.post_id = posts.id');
+    //  $playlist = DB::table('posts')->where('post_playlist.post_id', '=', 'posts.id')->select('*')->get();
+      //)(())$playlist = DB::select('SELECT * FROM posts INNER JOIN post_playlist WHERE post_playlist.post_id = posts.id AND posts.user_id = user_id');
+      $playlist = DB::table('posts')->join('post_playlist', 'posts.id', '=', 'post_playlist.post_id')->where('post_playlist.playlist_id', '=', $user_id)->select()->get();
+
+  //    print_r($playlist);
       //$playlist = DB::table('posts')->where('post_playlist.playlist_id', '=', $user_id)->distinct('posts.*')->get();
 
       $usernames = DB::table('post_playlist')->where('playlist_id', '=', $user_id)->select('username')->get();
