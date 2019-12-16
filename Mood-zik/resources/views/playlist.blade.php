@@ -6,9 +6,11 @@
 
 
 @section('content')
+
 @if(Auth::check())
 <section id="home">
   <h1>Ma playlist</h1>
+  <!--
   @for ($i = $nb_posts-1; $i >= 0; $i--)
     <div class=post>
     <div class="container_vertical">
@@ -19,9 +21,13 @@
 
     </p>
   @endfor
+-->
   <?php
-  for($i=$nb_posts-1; $i >=0; $i--)
+  $nb_posts = count($playlist);
+  //print_r($nb_posts);
+  for($i=$nb_posts-1; $i>=0; $i--)
   {
+    //print_r($i);
     echo '<div class=post>';
     echo '<div class="container_vertical">';
     echo '<h2>' . $playlist[$i]->title . '</h2>';
