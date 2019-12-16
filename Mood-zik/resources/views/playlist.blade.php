@@ -9,6 +9,16 @@
 @if(Auth::check())
 <section id="home">
   <h1>Ma playlist</h1>
+  @for ($i = $nb_posts-1; $i >= 0; $i--)
+    <div class=post>
+    <div class="container_vertical">
+    <h2>{{$playlist[$i]->title}}</h2>
+    <p class="author">Posté par
+    </div>
+    </div>
+
+    </p>
+  @endfor
   <?php
   for($i=$nb_posts-1; $i >=0; $i--)
   {
