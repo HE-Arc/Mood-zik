@@ -13,7 +13,7 @@
   @if($nb_posts == 0)
 
     <div class=post>
-    <p>Vous n'avez pas encore ajouter de post !</p>
+    <p>Vous n'avez pas encore ajouté de post !</p>
   </div>
   @endif
 

@@ -49,6 +49,7 @@ class PostController extends Controller
     {
         $my_posts = DB::table('posts')->where('user_id', auth()->id())->get();
         $username = DB::table('users')->where('id', auth()->id())->value('name');
+        $nb_posts = count($my_posts);
         $embeds = array();
 
         // not the best at all but only solution found in time
@@ -60,7 +61,7 @@ class PostController extends Controller
           array_push($embeds, $embed);
         }
 
-        return view('my_posts', ['my_posts' => $my_posts, 'username' => $username, 'embeds' => $embeds]);
+        return view('my_posts', ['my_posts' => $my_posts, 'username' => $username, 'embeds' => $embeds, 'nb_posts' => $nb_posts]);
     }
 
 
