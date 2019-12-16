@@ -10,7 +10,15 @@
 @if(Auth::check())
 <section id="posts">
   <h1>Ma playlist</h1>
+
+
   <?php $nb_posts = count($playlist); ?>
+  @if($nb_posts > 0)
+    <p>
+    Coucou
+    </p>
+  @endif
+  <!--
   @for ($i = $nb_posts+1; $i >= 0; $i--)
     <div class=post>
     <div class="container_vertical">
@@ -26,6 +34,7 @@
     </div>
     </div>
   @endfor
+-->
 </section>
 @else
 <section id="guest">
