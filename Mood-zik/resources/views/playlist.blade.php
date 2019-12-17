@@ -11,10 +11,11 @@
 <section id="posts">
   <h1>Ma playlist</h1>
   @if($nb_posts == 0 )
-  <div class=post>
-  <p>Vous n'avez actuellement aucun post dans votre playlist !</p>
-</div>
+    <div class=post>
+      <p>Vous n'avez actuellement aucun post dans votre playlist !</p>
+    </div>
   @endif
+
   @for ($i = $nb_posts-1; $i >= 0; $i--)
     <div class=post>
     <div class="container_vertical">
@@ -36,7 +37,5 @@
   <p class="information">Veuillez vous <a href="{{route('register')}}">inscrire</a> ou vous <a href="{{route('login')}}">connecter</a> pour accéder à cette page !</p>
 </section>
 @endif
-
-
 
 @endsection
