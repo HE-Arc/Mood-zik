@@ -25,7 +25,11 @@
     <div class="autocomplete" style="300px;">
     <label for="title">Votre morceau:</label>
     <input id="music" type="text" name="music" placeholder="Choisissez la musique" required />
-    <label id="errorLabel"></label>
+    @error('music')
+        <span class="invalid-feedback" role="alert">
+            <strong>sadsadsad</strong>
+        </span>
+    @enderror
     </div>
   </section>
 

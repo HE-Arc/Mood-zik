@@ -42,7 +42,9 @@ class PostController extends Controller
         return redirect('/home');
       }
       else {
+
           return redirect('/post');
+          //Ergonomie: Affichage d'un message d'erreur
 
       }
     }

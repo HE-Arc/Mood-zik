@@ -34,7 +34,7 @@
 
     <!--
     <div id="app">
-        @include('partials/nav')
+        @include('partials/header')
 
         <main class="py-4">
             @yield('content')
