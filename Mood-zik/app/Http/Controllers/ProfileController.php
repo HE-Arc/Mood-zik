@@ -39,4 +39,9 @@ class ProfileController extends Controller
 
         return view('auth.user_profile', ['username' => $username, 'posts' => $posts, 'embeds' => $embeds, 'nb_posts' => $nb_posts]);
     }
+
+
+
+
+
 }

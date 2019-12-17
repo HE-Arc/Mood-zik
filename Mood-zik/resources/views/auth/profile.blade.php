@@ -13,19 +13,17 @@
 <section id="profil">
 
         <h1>Mon profil</h1>
-        <div class="container_vertical">
-        <div class="container_horizental">
+
+
         <p class="title"> Nom d'utilisateur: </p>
         <p>{{ Auth::user()->name }}</p>
-        </div>
-        <div class="container_horizental">
+
+
         <p class="title"> Adresse mail: </p>
         <p> {{ Auth::user()->email }}</p>
-        </div>
-        <div class="container_horizental">
-        <p class="title"> Nombre de post:  </p>
 
-        </div>
+
+      
 
         <button type="submit">
         <a href="{{ __('Logout') }}"
