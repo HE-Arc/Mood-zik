@@ -35,14 +35,21 @@ class PlaylistController extends Controller
      */
     public function addToPlaylist(Request $request)
     {
-        $playlist_id = DB::table('playlists')->where('user_id', auth()->id())->value('id');
+        $user_id = auth()->id();
         $post_playlist = new PostPlaylist();
         $post_playlist->post_id = $request->post_id;
         $post_playlist->music_id = $request->post_music_id;
+        $playlist_id = DB::table('playlists')->where('user_id', auth()->id())->value('id');
         $post_playlist->playlist_id = $playlist_id;
         $post_playlist->username = $request->post_username;
-        $post_playlist->save();
-        return redirect('/playlist');
+        $check = DB::table('post_playlist')->where('post_playlist.playlist_id', '=', $user_id)->where('post_playlist.post_id' , '=', $post_playlist->post_id)->get();
+        $count = count($check);
+        //seulement si le post n'est pas n'est pas déjà dans la playlist
+        if($count==0)
+        {
+          $post_playlist->save();
+        }
+      return redirect('/playlist');
     }
 
 
