@@ -31,7 +31,7 @@
 
   <section class="input_zone">
     <label>Votre description:</label>
-    <textarea  name="text"  rows="1" cols="33" maxlength="200"  placeholder="Veuillez saisir la description de votre post"></textarea>
+    <textarea  name="text"  rows="1" cols="33" maxlength="200"  placeholder="Veuillez saisir la description de votre post" required></textarea>
   </section>
 
 

@@ -25,9 +25,10 @@ class PostController extends Controller
      */
     public function storePost(PostRequest $request)
     {
-        $music = $request->music;
-        $music_id = DB::table('musics')->where('title', $music)->value('id');
-
+      $music = $request->music;
+      $music_id = DB::table('musics')->where('title', $music)->value('id');
+      if(isset($music_id))
+       {
         $post = new Post();
 
         $post->title = $request->title;
@@ -39,6 +40,11 @@ class PostController extends Controller
         $post->save();
 
         return redirect('/home');
+      }
+      else {
+          return redirect('/post');
+
+      }
     }
 
     /**
