@@ -25,7 +25,6 @@ class ProfileController extends Controller
     {
         $username = DB::table('users')->where('id', '=', $id)->value('name');
         $posts = DB::table('posts')->where('user_id', '=', $id)->get();
-
         $embeds = array();
 
         // pas du tout idéal mais seule solution fonctionnelle trouvée à temps

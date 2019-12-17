@@ -24,14 +24,14 @@
   <section class="input_zone">
     <div class="autocomplete" style="300px;">
     <label for="title">Votre morceau:</label>
-    <input id="music" type="text" name="music" placeholder="Choisissez la musique" />
+    <input id="music" type="text" name="music" placeholder="Choisissez la musique" required />
     <label id="errorLabel"></label>
     </div>
   </section>
 
   <section class="input_zone">
     <label>Votre description:</label>
-    <textarea  name="text"  rows="1" cols="33" maxlength="200"  placeholder="Veuillez saisir la description de votre post" required></textarea>
+    <textarea  name="text"  rows="1" cols="33" maxlength="200"   required></textarea>
   </section>
 
 

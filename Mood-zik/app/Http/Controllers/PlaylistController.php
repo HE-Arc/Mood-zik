@@ -42,7 +42,7 @@ class PlaylistController extends Controller
         $post_playlist->playlist_id = $playlist_id;
         $post_playlist->username = $request->post_username;
         $post_playlist->save();
-        return redirect('/home');
+        return redirect('/playlist');
     }
 
 

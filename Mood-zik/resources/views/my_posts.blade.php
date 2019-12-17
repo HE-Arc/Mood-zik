@@ -27,9 +27,10 @@
     <div class="container_horizental">
     <?php echo $embeds[$i]?>
     <form action="{{route('add_to_playlist')}}" method="post">
-    {{csrf_field()}}
     <input type="hidden" name="post_id" value="{{$my_posts[$i]->id}}" />
+    {{csrf_field()}}
     <input type="hidden" name="post_music_id" value="{{$my_posts[$i]->music_id}}" />
+    <input type="hidden" name="post_username" value="{{$username[$i]}}" />
     <input type="submit" title="Ajouter à la playlist" value="+" />
     </form>
     </div>

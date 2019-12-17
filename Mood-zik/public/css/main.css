@@ -5,7 +5,6 @@
 	font-family: arial;
 }
 
-
 body
 {
 	display: flex;
@@ -13,8 +12,6 @@ body
 
 }
 
-
-/*Header + menu CSS */
 header
 {
 	display: flex;
@@ -32,7 +29,7 @@ header .title
 	align-items: center;
 	font-size: 75px;
 	transition: .5s ease;
-	font-family: Chalkduster;
+	font-family: Helvetica;
 	cursor: pointer;
 	margin-right: 100px;
 }
@@ -104,7 +101,6 @@ header li a:hover
 
 .page .content
 {
-
 	width: 70%;
 	padding: 10px;
 }
