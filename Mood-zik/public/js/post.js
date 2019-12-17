@@ -1,3 +1,7 @@
+/**
+ * Dynamic Research JS file from www.w3schools.com
+ *
+ */
 
 function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,

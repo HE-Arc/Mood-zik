@@ -25,6 +25,7 @@
     <div class="autocomplete" style="300px;">
     <label for="title">Votre morceau:</label>
     <input id="music" type="text" name="music" placeholder="Choisissez la musique" />
+    <label id="errorLabel"></label>
     </div>
   </section>
 
@@ -34,7 +35,7 @@
   </section>
 
 
-  <button type="submit" class="btn btn-primary">Ajouter</button>
+  <button type="submit" id="button" class="btn btn-primary">Ajouter</button>
   </form>
 </section>
 
@@ -54,6 +55,35 @@
     <?php endforeach; ?>
     console.log(tabMusics);
     autocomplete(document.getElementById("music"), tabMusics);
+
+    const musicField = document.getElementById("music");
+    const button = document.getElementById("button");
+
+    musicField.addEventListener('focusout', function (evt){
+
+        if(!tabMusics.includes(musicField.value)){
+          //alert('false');
+          button.disabled = true;
+          document.getElementById('errorLabel').innerHTML = "Veuillez entrer une chanson valide svp";
+        }
+        else{
+          //alert('true');
+          button.disabled = false;
+          document.getElementById('errorLabel').innerHTML = "";
+        }
+    });
+
+/*
+    function validateMusic()
+    {
+      var musicInputText, returnText;
+      musicInputText = document.getElementById("music").value;
+      if(!tabMusics.includes(musicInputText))
+      {
+
+      }
+    }
+    */
 </script>
 
 @endsection
